@@ -1,0 +1,6 @@
+[Unit]
+Description=AURORA-6 servicios de monitorización (grupo 3)
+Wants=structure-monitor.service telemetry-monitor.service supply-monitor.service
+
+[Install]
+WantedBy=multi-user.target
