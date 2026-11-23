@@ -1,0 +1,18 @@
+[Unit]
+Description=AURORA-6 monitor de suministros (miembro C, compras)
+After=network.target
+
+[Service]
+Type=simple
+User=ariadna
+ExecStart=/opt/aurora6/tools/supply-monitor.sh
+Restart=on-failure
+RestartSec=3
+# Endurecimiento (P3, apartado 5)
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+
+[Install]
+WantedBy=multi-user.target
